@@ -19,6 +19,7 @@ struct EasyTooltipViewModifier: ViewModifier {
     GeometryReader { proxy in
       ZStack {
         content
+          .frame(maxWidth: .infinity, maxHeight: .infinity)
           .coordinateSpace(name: coordinateSpaceName)
           .backgroundPreferenceValue(TooltipPreferenceKey.self) { prefs in
             GeometryReader { proxy in
