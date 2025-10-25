@@ -27,4 +27,15 @@ public extension View {
   func easyTooltip(_ controller: EasyTooltipController) -> some View {
     modifier(EasyTooltipViewModifier(controller: controller))
   }
+  
+  func tooltip(_ text: String, placement: TooltipPlacement = .auto, gap: CGFloat = 8) -> some View {
+    modifier(
+      EasyTooltipTargetViewModifier(
+        id: .init(),
+        text: text,
+        placement: placement,
+        gap: gap
+      )
+    )
+  }
 }
