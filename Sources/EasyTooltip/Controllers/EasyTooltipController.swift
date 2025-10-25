@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-public final class EasyTooltipController: ObservableObject {
+public class EasyTooltipController: ObservableObject {
   @Published var isPresented = false
   @Published var activeTargetID: AnyHashable? = nil
 
