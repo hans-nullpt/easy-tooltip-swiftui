@@ -21,7 +21,9 @@ extension View {
   func tooltipController(_ controller: EasyTooltipController) -> some View {
     environment(\.tooltipController, controller)
   }
-  
+}
+
+public extension View {
   func easyTooltip(_ controller: EasyTooltipController) -> some View {
     modifier(EasyTooltipViewModifier(controller: controller))
   }
