@@ -18,6 +18,10 @@ extension View {
     .onPreferenceChange(SizePreferenceKey.self, perform: onChange)
   }
   
+  func tooltipController(_ controller: EasyTooltipController) -> some View {
+    environment(\.tooltipController, controller)
+  }
+  
   func easyTooltip(_ controller: EasyTooltipController) -> some View {
     modifier(EasyTooltipViewModifier(controller: controller))
   }

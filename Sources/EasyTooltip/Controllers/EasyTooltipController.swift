@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-final class EasyTooltipController: ObservableObject {
+public final class EasyTooltipController: ObservableObject {
   @Published var isPresented = false
   @Published var activeTargetID: AnyHashable? = nil
 
@@ -58,11 +58,5 @@ extension EnvironmentValues {
   var tooltipController: EasyTooltipController {
     get { self[EasyTooltipControllerKey.self] }
     set { self[EasyTooltipControllerKey.self] = newValue }
-  }
-}
-
-extension View {
-  func tooltipController(_ controller: EasyTooltipController) -> some View {
-    environment(\.tooltipController, controller)
   }
 }
