@@ -13,8 +13,15 @@ public class EasyTooltipController: ObservableObject {
   @Published var activeTargetID: AnyHashable? = nil
 
   private var pendingID: AnyHashable? = nil
+  var style: EasyTooltipStyle
   
-  public init() { }
+  public init() {
+    self.style = DefaultTooltipStyle()
+  }
+  
+  public init(style: EasyTooltipStyle) {
+    self.style = style
+  }
 
   func tapTarget(_ id: AnyHashable) {
     if activeTargetID == id {

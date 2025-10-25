@@ -66,11 +66,11 @@ struct TooltipOverlay: View {
           placement: result.placement,
           arrowAlignment: result.arrowAlignment,
           arrowPixel: arrowPixel,
-          background: .white
+          style: controller.style
         ) {
           Text(pref.text)
-            .font(.system(size: 14, weight: .regular))
-            .foregroundColor(Color.primary)
+            .font(controller.style.font)
+            .foregroundColor(controller.style.foregroundColor)
             .fixedSize(horizontal: false, vertical: true)
             .frame(maxWidth: containerSize.width, alignment: .leading)
         } onSizeChange: { newSize in
